@@ -32,7 +32,52 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Create Product - OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"iPhone 3\",\r\n    \"price\": 300,\r\n    \"quantity\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{product-service-url}}/products",
+									"host": [
+										"{{product-service-url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Apr 2022 14:56:54 GMT"
+								},
+								{
+									"key": "content-length",
+									"value": "36"
+								}
+							],
+							"cookie": [],
+							"body": "a7d9abd1-bd13-4b4e-8a3a-d70447a2fe95"
+						}
+					]
 				},
 				{
 					"name": "Get Product",
