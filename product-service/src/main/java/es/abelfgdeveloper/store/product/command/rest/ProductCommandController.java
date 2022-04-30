@@ -2,6 +2,7 @@ package es.abelfgdeveloper.store.product.command.rest;
 
 import es.abelfgdeveloper.store.product.command.CreateProductCommand;
 import java.util.UUID;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.core.env.Environment;
@@ -19,7 +20,7 @@ public class ProductCommandController {
   private final CommandGateway commandGateway;
 
   @PostMapping
-  public String createProduct(@RequestBody CreateProductRestModel request) {
+  public String createProduct(@Valid @RequestBody CreateProductRestModel request) {
 
     CreateProductCommand command =
         CreateProductCommand.builder()
