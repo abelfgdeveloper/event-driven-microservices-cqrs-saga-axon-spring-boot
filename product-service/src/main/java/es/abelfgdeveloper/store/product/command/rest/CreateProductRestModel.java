@@ -1,4 +1,4 @@
-package es.abelfgdeveloper.store.product.rest;
+package es.abelfgdeveloper.store.product.command.rest;
 
 import java.math.BigDecimal;
 import lombok.Data;

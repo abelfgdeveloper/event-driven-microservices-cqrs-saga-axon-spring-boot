@@ -1,4 +1,4 @@
-package es.abelfgdeveloper.store.product.rest;
+package es.abelfgdeveloper.store.product.command.rest;
 
 import es.abelfgdeveloper.store.product.command.CreateProductCommand;
 import java.util.UUID;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/products")
-public class ProductsController {
+public class ProductCommandController {
 
   private final Environment env;
   private final CommandGateway commandGateway;
