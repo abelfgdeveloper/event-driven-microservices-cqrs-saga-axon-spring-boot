@@ -1,5 +1,7 @@
 package es.abelfgdeveloper.store.product.rest;
 
+import es.abelfgdeveloper.store.product.command.CreateProductCommand;
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +20,15 @@ public class ProductsController {
 
   @PostMapping
   public String createProduct(@RequestBody CreateProductRestModel request) {
+
+    CreateProductCommand command =
+        CreateProductCommand.builder()
+            .productId(UUID.randomUUID().toString())
+            .title(request.getTitle())
+            .price(request.getPrice())
+            .quantity(request.getQuantity())
+            .build();
+
     return "HTTP POST Handled " + request.getTitle();
   }
 
