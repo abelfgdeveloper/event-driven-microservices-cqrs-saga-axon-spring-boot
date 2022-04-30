@@ -26,6 +26,7 @@
     <java.version>11</java.version>
     <spring-cloud.version>2021.0.2</spring-cloud.version>
     <fmt-maven-plugin>2.18</fmt-maven-plugin>
+    <axonframework.version>4.5.9</axonframework.version>
   </properties>
 
 
@@ -37,6 +38,11 @@
         <version>${spring-cloud.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.axonframework</groupId>
+        <artifactId>axon-spring-boot-starter</artifactId>
+        <version>${axonframework.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
