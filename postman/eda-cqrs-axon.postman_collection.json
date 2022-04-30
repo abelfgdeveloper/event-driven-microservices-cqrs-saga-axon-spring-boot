@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"title\": \"iPhone 3\",\r\n    \"price\": 300,\r\n    \"quantity\": 2\r\n}",
+							"raw": "{\r\n    \"title\": \"iPhone 5\",\r\n    \"price\": 500,\r\n    \"quantity\": 2\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +94,43 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Get Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{product-service-url}}/products",
+									"host": [
+										"{{product-service-url}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "transfer-encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Apr 2022 16:10:43 GMT"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"productId\": \"a7d9abd1-bd13-4b4e-8a3a-d70447a2fe95\",\n        \"title\": \"iPhone 3\",\n        \"price\": 300,\n        \"quantity\": 2\n    },\n    {\n        \"productId\": \"ff5085b1-9909-468f-9972-bfec0995da7e\",\n        \"title\": \"iPhone 5\",\n        \"price\": 500,\n        \"quantity\": 2\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "Update Product",
