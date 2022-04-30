@@ -5,11 +5,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "products_lookup")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductLookupEntity implements Serializable {
 
   private static final long serialVersionUID = 9109650400360054468L;
