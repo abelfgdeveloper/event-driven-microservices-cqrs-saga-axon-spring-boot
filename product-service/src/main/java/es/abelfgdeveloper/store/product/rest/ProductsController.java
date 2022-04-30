@@ -2,7 +2,8 @@ package es.abelfgdeveloper.store.product.rest;
 
 import es.abelfgdeveloper.store.product.command.CreateProductCommand;
 import java.util.UUID;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,11 +13,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RequiredArgsConstructor
 @RestController
 @RequestMapping("/products")
 public class ProductsController {
 
-  @Autowired private Environment env;
+  private final Environment env;
+  private final CommandGateway commandGateway;
 
   @PostMapping
   public String createProduct(@RequestBody CreateProductRestModel request) {
@@ -29,7 +32,13 @@ public class ProductsController {
             .quantity(request.getQuantity())
             .build();
 
-    return "HTTP POST Handled " + request.getTitle();
+    String returnValue = null;
+    try {
+      returnValue = commandGateway.sendAndWait(command);
+    } catch (Exception ex) {
+      returnValue = ex.getLocalizedMessage();
+    }
+    return returnValue;
   }
 
   @GetMapping
