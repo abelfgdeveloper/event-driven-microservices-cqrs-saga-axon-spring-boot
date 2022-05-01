@@ -10,9 +10,9 @@ import org.springframework.web.context.request.WebRequest;
 @ControllerAdvice
 public class ProductServiceErrorHandler {
 
-  @ExceptionHandler(value = {IllegalStateException.class})
-  public ResponseEntity<Object> handleIllegalStateException(
-      IllegalStateException ex, WebRequest request) {
+  @ExceptionHandler(value = {IllegalArgumentException.class})
+  public ResponseEntity<Object> handleIllegalArgumentException(
+      IllegalArgumentException ex, WebRequest request) {
 
     return new ResponseEntity<>(
         ex.getMessage(), new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
