@@ -5,6 +5,7 @@ import es.abelfgdeveloper.store.product.core.data.ProductRepository;
 import es.abelfgdeveloper.store.product.core.event.ProductCreatedEvent;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.eventhandling.EventHandler;
+import org.axonframework.messaging.interceptors.ExceptionHandler;
 import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
@@ -12,6 +13,12 @@ import org.springframework.stereotype.Component;
 public class ProductEventHandler {
 
   private final ProductRepository productRepository;
+
+  @ExceptionHandler(resultType = Exception.class)
+  public void handle(Exception ex) {}
+
+  @ExceptionHandler(resultType = IllegalArgumentException.class)
+  public void handle(IllegalArgumentException ex) {}
 
   @EventHandler
   public void on(ProductCreatedEvent event) {
@@ -21,6 +28,10 @@ public class ProductEventHandler {
     productEntity.setPrice(event.getPrice());
     productEntity.setQuantity(event.getQuantity());
 
-    productRepository.save(productEntity);
+    try {
+      productRepository.save(productEntity);
+    } catch (IllegalArgumentException ex) {
+      ex.printStackTrace();
+    }
   }
 }
