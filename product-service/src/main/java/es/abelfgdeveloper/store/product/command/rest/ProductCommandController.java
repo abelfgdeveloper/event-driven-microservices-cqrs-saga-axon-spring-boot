@@ -30,13 +30,14 @@ public class ProductCommandController {
             .quantity(request.getQuantity())
             .build();
 
-    String returnValue = null;
-    try {
-      returnValue = commandGateway.sendAndWait(command);
-    } catch (Exception ex) {
-      returnValue = ex.getLocalizedMessage();
-    }
-    return returnValue;
+    //    String returnValue = null;
+    //    try {
+    //      returnValue = commandGateway.sendAndWait(command);
+    //    } catch (Exception ex) {
+    //      returnValue = ex.getLocalizedMessage();
+    //    }
+    //    return returnValue;
+    return commandGateway.sendAndWait(command);
   }
 
   //  @GetMapping
