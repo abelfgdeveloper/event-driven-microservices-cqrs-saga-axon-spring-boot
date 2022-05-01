@@ -29,10 +29,6 @@ public class ProductAggregate {
     createdEvent.setQuantity(command.getQuantity());
 
     AggregateLifecycle.apply(createdEvent);
-
-    if (true) {
-      throw new Exception("An Error took place in the CreateProductCommand");
-    }
   }
 
   @EventSourcingHandler
