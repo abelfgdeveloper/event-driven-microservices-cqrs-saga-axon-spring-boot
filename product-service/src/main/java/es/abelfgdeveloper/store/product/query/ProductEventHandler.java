@@ -15,7 +15,9 @@ public class ProductEventHandler {
   private final ProductRepository productRepository;
 
   @ExceptionHandler(resultType = Exception.class)
-  public void handle(Exception ex) {}
+  public void handle(Exception ex) throws Exception {
+    throw ex;
+  }
 
   @ExceptionHandler(resultType = IllegalArgumentException.class)
   public void handle(IllegalArgumentException ex) {}
