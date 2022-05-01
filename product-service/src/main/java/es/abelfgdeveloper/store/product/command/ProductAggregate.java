@@ -19,7 +19,7 @@ public class ProductAggregate {
   private Integer quantity;
 
   @CommandHandler
-  public ProductAggregate(CreateProductCommand command) {
+  public ProductAggregate(CreateProductCommand command) throws Exception {
     // Validate Create Product Command
 
     ProductCreatedEvent createdEvent = new ProductCreatedEvent();
@@ -29,6 +29,10 @@ public class ProductAggregate {
     createdEvent.setQuantity(command.getQuantity());
 
     AggregateLifecycle.apply(createdEvent);
+
+    if (true) {
+      throw new Exception("An Error took place in the CreateProductCommand");
+    }
   }
 
   @EventSourcingHandler
