@@ -26,7 +26,7 @@
     <java.version>11</java.version>
     <spring-cloud.version>2021.0.2</spring-cloud.version>
     <fmt-maven-plugin>2.18</fmt-maven-plugin>
-    <axonframework.version>4.5.9</axonframework.version>
+    <axonframework.version>4.5.12</axonframework.version>
     <guava.version>31.1-jre</guava.version>
   </properties>
 
@@ -42,8 +42,10 @@
       </dependency>
       <dependency>
         <groupId>org.axonframework</groupId>
-        <artifactId>axon-spring-boot-starter</artifactId>
+        <artifactId>axon-bom</artifactId>
         <version>${axonframework.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.google.guava</groupId>

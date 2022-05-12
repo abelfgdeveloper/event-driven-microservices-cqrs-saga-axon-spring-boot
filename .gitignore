@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+axon-server/axonserver-4.5.12.jar
+axon-server/data/axonserver-controldb.mv.db
+axon-server/data/default/00000000000000000000.events
+axon-server/data/default/00000000000000000000.snapshots
+axon-server/plugins/cache/bundle0/last.java.version

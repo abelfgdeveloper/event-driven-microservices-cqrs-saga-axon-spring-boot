@@ -12,3 +12,10 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${random.value}
+    
+
+axon:
+  serializer:
+    general: jackson
+#    events: jackson
+#    messages: jackson
