@@ -2,6 +2,7 @@ package es.abelfgdeveloper.course.eda_cqrs_axon.products.infrastructure.in.rest.
 
 import es.abelfgdeveloper.course.eda_cqrs_axon.products.domain.command.CreateProductCommand;
 import java.util.UUID;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.http.HttpStatus;
@@ -18,7 +19,8 @@ public class CreateProductController {
 
   @PostMapping("/products")
   @ResponseStatus(HttpStatus.CREATED)
-  public CreateProductResponseResource execute(@RequestBody CreateProductRequestResource request) {
+  public CreateProductResponseResource execute(
+      @Valid @RequestBody CreateProductRequestResource request) {
     CreateProductCommand command =
         CreateProductCommand.builder()
             .productId(UUID.randomUUID().toString())

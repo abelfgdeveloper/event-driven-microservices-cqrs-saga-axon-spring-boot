@@ -1,5 +1,9 @@
 server:
   port: ${PORT:0}
+  # For spring-boot-starter-validation
+  error:
+    include-message: always
+    include-binding-errors: always
 
 spring:
   application:
