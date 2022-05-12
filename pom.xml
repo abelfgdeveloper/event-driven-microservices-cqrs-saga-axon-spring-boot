@@ -16,10 +16,6 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <modules>
-    <module>product-service</module>
-    <module>discovery-server</module>
-    <module>gateway-server</module>
-    <module>order-service</module>
   </modules>
 
 
