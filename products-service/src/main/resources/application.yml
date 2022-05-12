@@ -4,6 +4,13 @@ server:
 spring:
   application:
     name: products-service
+  datasource:
+    url: jdbc:postgresql://localhost:5432/eda_cqrs_axon_products
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
 
 eureka:
   client:

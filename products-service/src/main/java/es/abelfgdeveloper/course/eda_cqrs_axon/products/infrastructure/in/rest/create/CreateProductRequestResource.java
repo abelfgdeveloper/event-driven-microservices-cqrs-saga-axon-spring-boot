@@ -5,9 +5,8 @@ import lombok.Data;
 
 @Data
 public class CreateProductRequestResource {
-  
+
   private String title;
   private BigDecimal price;
   private Integer quantity;
-  
 }

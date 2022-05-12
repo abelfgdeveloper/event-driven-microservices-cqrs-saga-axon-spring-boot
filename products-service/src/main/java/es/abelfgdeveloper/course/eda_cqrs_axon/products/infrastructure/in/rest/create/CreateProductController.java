@@ -27,7 +27,7 @@ public class CreateProductController {
             .quantity(request.getQuantity())
             .build();
     String productId = commandGateway.sendAndWait(command);
-    
+
     return CreateProductResponseResource.builder().productId(productId).build();
   }
 }

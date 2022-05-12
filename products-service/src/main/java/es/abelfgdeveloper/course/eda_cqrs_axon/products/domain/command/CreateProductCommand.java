@@ -8,11 +8,9 @@ import org.axonframework.modelling.command.TargetAggregateIdentifier;
 @Builder
 @Data
 public class CreateProductCommand {
-  
-  @TargetAggregateIdentifier
-  private final String productId;
+
+  @TargetAggregateIdentifier private final String productId;
   private final String title;
   private final BigDecimal price;
   private final Integer quantity;
-  
 }
