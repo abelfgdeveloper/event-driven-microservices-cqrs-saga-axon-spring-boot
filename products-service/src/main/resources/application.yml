@@ -21,8 +21,8 @@ eureka:
     instance-id: ${spring.application.name}:${random.value}
     
 
-axon:
-  serializer:
-    general: jackson
+#axon:
+#  serializer:
+#    general: jackson
 #    events: jackson
 #    messages: jackson
