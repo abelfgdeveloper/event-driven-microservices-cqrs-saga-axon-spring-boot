@@ -16,7 +16,8 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <modules>
-	<module>products-service</module>
+    <module>products-service</module>
+    <module>discovery-server</module>
   </modules>
 
 
